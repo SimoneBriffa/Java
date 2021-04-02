@@ -1,0 +1,35 @@
+public static void main(String[] args) {
+
+        System.out.println("Enter slots");
+        int slots = scanner.nextInt();
+
+        int[] values = readIntegers(slots);
+        System.out.println(Arrays.toString(values));
+
+       System.out.println("Min is " + findMin(values));
+    }
+
+    private static Scanner scanner = new Scanner(System.in);
+
+public static int[] readIntegers(int count){
+
+    int[] values = new int[count];
+
+        for(int i=0; i<count; i++){
+            System.out.println("Enter #" + (i+1) + " number");
+            values[i] = scanner.nextInt();
+        }
+        return values;
+
+}
+
+public static int findMin(int[] array){
+
+    int min = array[0];
+
+    for(int i = 1; i < array.length; i++){
+        if(array[i] < min)
+            min = array[i];
+    }
+    return min;
+}

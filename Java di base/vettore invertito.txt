@@ -1,0 +1,42 @@
+public static void main(String[] args) {
+
+        System.out.println("Enter slots");
+        int slots = scanner.nextInt();
+
+        int[] values = readIntegers(slots);
+        System.out.println(Arrays.toString(values));
+
+        Reverse(values);
+
+        System.out.println(Arrays.toString(values));
+    }
+
+    private static Scanner scanner = new Scanner(System.in);
+
+public static int[] readIntegers(int count){
+
+    int[] values = new int[count];
+
+        for(int i=0; i<count; i++){
+            System.out.println("Enter #" + (i+1) + " number");
+            values[i] = scanner.nextInt();
+        }
+        return values;
+
+}
+
+public static void Reverse(int[] array){
+
+    int j = array.length;
+
+    for(int i = 0; i < array.length/2; i++){
+
+        int temp = array[i];
+        array[i] = array[(j-i-1)];
+        array[j-i-1] = temp;
+        
+    }
+
+ 
+
+}

@@ -1,0 +1,49 @@
+public static boolean isPalindrome (int number){
+
+        //nel caso sia negativo
+
+        boolean flag = false;
+
+        if(number < 0) {
+            number = -number;
+            flag = true;
+        }
+
+        //--------------------------------
+
+        int aux = number;   //salva il numero
+        int howManyNumbers = -1;   //conta da quante cifre è fatto il numero
+
+        while(number >= 1){
+
+            number /= 10;
+            howManyNumbers++;
+
+        }
+
+        int sum = 0, aux2 = aux;
+
+        while(howManyNumbers >= 0){
+
+            sum += (aux % 10)*Math.pow(10, howManyNumbers);
+            howManyNumbers--;
+            aux /= 10;
+        }
+
+        //se il numero era negativo, lo riporta tale
+
+        if(flag) {
+            sum = -sum;
+            aux2 = -aux2;
+        }
+
+        //fine
+
+        if(sum == aux2)
+            return true;
+
+        return false;
+
+
+
+        }

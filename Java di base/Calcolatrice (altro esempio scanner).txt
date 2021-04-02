@@ -1,0 +1,28 @@
+ public static void inputThenPrintSumAndAverage () {
+
+            Scanner scanner = new Scanner(System.in);
+
+            int sum = 0, counter = 0;
+
+            while (true) {
+
+                System.out.println("Enter value: ");
+
+                boolean hasNextInt = scanner.hasNextInt();
+
+                if (hasNextInt) {
+                    int value = scanner.nextInt();
+                    scanner.nextLine();
+                    sum += value;
+                    counter++;
+                } else
+                    break;
+            }
+
+            long average = sum / counter;
+
+
+            System.out.println("SUM = " + sum + " AVERAGE = " + average);
+
+            scanner.close();
+        }

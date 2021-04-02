@@ -1,0 +1,4 @@
+claudia,ferro,ingegnere elettronico
+dario,fortuna,bancario
+carlo,branchina,fisico
+salvo,ilacqua,fiscalista

@@ -1,0 +1,52 @@
+public static boolean canPack(int bigCount, int smallCount, int goal) {
+
+        //escludo da subito le soluzioni sicuramente sbagliate
+        if (bigCount < 0 || smallCount < 0 || goal < 0 || goal > 5 * bigCount + smallCount)
+            return false;
+
+
+        //se invece la somma dei due fattori soddisfa la quantità "goal" abbiamo diversi casi...
+        else if (goal <= 5*bigCount + smallCount){
+
+            //case banale
+            //if((bigCount == 0 && smallCount >= goal) || (5*bigCount + smallCount == goal))
+              //  return true;
+
+            //se abbiamo un numero di sacchi da 5kg tali che da soli superano la quantità richiesta...
+            if(5*bigCount >= goal){
+
+                //se abbiamo solo sacchi grande e siamo precisi ovviamente è ok
+                if(5*bigCount == goal)
+                    return true;
+
+                //se non ci sono sacchi piccoli di sicuro non va bene perchè per raggiungere
+                //la quantità richiesta dovremmo spacchettare un pacco da 5 kg
+                if(smallCount == 0)
+                    return false;
+
+                //se invece ci sono sacchi da 1kg
+                else {
+                    int i = 1, flag = 0;
+
+                    //usa un pacco da 5kg per volta finchè non arrivi alla quantità richiesta
+                    while(i < bigCount){
+
+                        if(5*i + smallCount >= goal) {
+                            flag = 1;
+                        }
+                        if (flag == 1)
+                            break;
+                        i++;
+                    }
+                    if(flag == 1)
+                        return true;
+                }
+
+            }
+            else
+                return true;
+        }
+
+        return false;
+
+    }

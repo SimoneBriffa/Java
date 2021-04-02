@@ -1,0 +1,66 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.GridPane?>
+<BorderPane fx:id="mainBorderPane" fx:controller="sample.Controller"
+            xmlns:fx="http://javafx.com/fxml">
+    <top>
+        <VBox>
+        <MenuBar>
+            <Menu text="File">
+                <items>
+                    <MenuItem text="New..." onAction ="#showNewItemDialog"/>
+                    <MenuItem text="Exit" onAction="#handleExit"></MenuItem>
+                </items>
+            </Menu>
+        </MenuBar>
+            <ToolBar>
+                <HBox>
+                    <Button text="New..." onAction="#showNewItemDialog">
+                        <tooltip>
+                            <Tooltip text="Add new To Do..."/>
+                        </tooltip>
+                            <graphic>
+                                <ImageView>
+                                    <Image url="@/toolbarButtonGraphics/general/FindAgain24.gif"/>
+                                </ImageView>
+                            </graphic>
+                    </Button>
+                    <ToggleButton fx:id="filterToggleButton" text="Today's items" onAction="#handleFilterButton">
+                        <tooltip>
+                            <Tooltip text="Button down: show today's items only. Button up: show all items"/>
+                        </tooltip>
+                    </ToggleButton>
+                </HBox>
+            </ToolBar>
+        </VBox>
+    </top>
+    <left>
+        <ListView fx:id="todoListView" onKeyPressed="#handleKeyPressed"> <!-- se non usassimo la funzione con le lamba
+        allora ci vorrebbe questa scrittura-> "onMouseClicked="#handleClickListView"" dopo "toDoListView>-->
+
+        </ListView>
+    </left>
+    <center>
+        <VBox>
+        <TextArea fx:id="itemDetailsTextArea" VBox.vgrow="ALWAYS" wrapText="true"/>
+<!--            questa funzione vgrow consente di allargare lo spazio riservato a questa TextArea
+                mentre wrap consente di formattare secondo lo spazio disponibile eventuali testi molto lunghi-->
+            <HBox>
+                <Label text="Due: " style="-fx-background-color: white">
+                    <font>
+                    <Font name="Times New Roman bold" size="20"/>
+                </font>
+                </Label>
+                <Label fx:id="deadLineLabel">
+                <font>
+                    <Font name="Times New Roman bold" size="20"/>
+                </font>
+                </Label>
+            </HBox>
+        </VBox>
+    </center>
+
+</BorderPane>

@@ -1,0 +1,2 @@
+0,  You are sit in front of a computer learning Java
+1,  You are standing at the end of a road before a small

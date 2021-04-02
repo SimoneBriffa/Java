@@ -1,0 +1,85 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.shape.Box?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<BorderPane fx:controller="sample.Controller"
+            xmlns:fx="http://javafx.com/fxml"
+            style="-fx-background-color: green">
+    <top>
+        <VBox>
+            <Button text = "Visualizza amici" onAction="#visualizzaAmici" maxWidth="100">
+                <tooltip>
+                    <Tooltip text="Salva gli amici inseriti su disco"/>
+                </tooltip>
+                <VBox.margin>
+                    <Insets>
+                        <top>10</top>
+                        <bottom>10</bottom>
+                        <left>10</left>
+                    </Insets>
+                </VBox.margin>
+            </Button>
+            <Button text = "Aggiungi amico" onAction="#aggiungiNuovoAmico" maxWidth="100">
+                <tooltip>
+                    <Tooltip text="Salva gli amici inseriti su disco"/>
+                </tooltip>
+                <VBox.margin>
+                    <Insets>
+                        <bottom>10</bottom>
+                        <left>10</left>
+                    </Insets>
+                </VBox.margin>
+            </Button>
+            <Button text = "Salva amici" onAction="#salvaAmici" maxWidth="100">
+                <tooltip>
+                    <Tooltip text="Salva gli amici inseriti su disco"/>
+                </tooltip>
+                <VBox.margin>
+                    <Insets>
+                        <bottom>10</bottom>
+                        <left>10</left>
+                    </Insets>
+                </VBox.margin>
+            </Button>
+        </VBox>
+    </top>
+
+    <left>
+        <VBox maxWidth="500" maxHeight="500">
+            <ListView fx:id="listaAmiciStampata">
+                <VBox.margin>
+                     <Insets>
+                         <bottom>10</bottom>
+                            <left>10</left>
+                     </Insets>
+                </VBox.margin>
+            </ListView>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox fx:id="boxNuovoAmico" visible="false">
+            <GridPane>
+                <Label text="Nome" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="campoNuovoNome" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                <Label text="Cognome" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="campoNuovoCognome" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                <Label text="Lavoro" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="campoNuovoLavoro" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                <Button fx:id="conferma" text="OK" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                <Button fx:id="annulla" text="Annulla" GridPane.rowIndex="3" GridPane.columnIndex="2"/>
+
+            </GridPane>
+        </VBox>
+    </center>
+
+</BorderPane>

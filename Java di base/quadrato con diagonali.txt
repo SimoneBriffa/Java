@@ -1,0 +1,26 @@
+ public static void printSquareStar(int number) {
+
+        if (number < 5)
+            System.out.println("Invalid Value");
+
+        else {
+
+            int i = 1, j = 1;
+
+            for (i = 1; i <= number; i++) {
+
+                for (j = 1; j <= number; j++) {
+
+                    if (i == 1 || i == number || j == 1 || j == i || j == number || j == (number - i) + 1)
+                        System.out.print("*");
+                    else
+                        System.out.print(" ");
+
+                }
+                System.out.println();
+            }
+
+
+        }
+
+    }
